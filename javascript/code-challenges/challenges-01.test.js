@@ -30,6 +30,13 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   // Solution code here...
+  let newArr = [];
+
+  arr.forEach(str => {
+    let newArray = str + '!';
+    newArr.push(newArray);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,6 +49,13 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
+  let newArr = [];
+
+  arr.forEach(str => {
+    let newArray = str.toUpperCase();
+    newArr.push(newArray);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,12 +70,21 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 const greeting = (word) => {
   // Solution code here...
+
+  return word.toUpperCase() + '!';
 };
+
 
 const speaker = (words, callback) => {
   // Solution code here...
-};
+  let newArr = [];
 
+  words.forEach(arr => {
+    callback(arr);
+    newArr.push(callback(arr));
+  });
+  return newArr;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -80,17 +103,21 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  let newArr = [];
+  newArr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  arr.forEach.push(num);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
 
 CHALLENGE 6
 
-Write a function named createList that takes in an array of the current store intentory.
+Write a function named createList that takes in an array of the current store inventory.
 
 The inventory is formatted like this:
 [
@@ -106,6 +133,14 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  let newArr = [];
+
+  availableItems.forEach( () => {
+    if (inventory[1] === true){
+      newArr.push(name);
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
