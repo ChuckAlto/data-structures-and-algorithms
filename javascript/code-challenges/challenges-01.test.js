@@ -103,14 +103,16 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
-  let newArr = [];
-  newArr.push(value);
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
-  arr.forEach.push(num);
+  for (let i =0; i < times; i++){
+    callback(arr, num);
+  }
 
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
