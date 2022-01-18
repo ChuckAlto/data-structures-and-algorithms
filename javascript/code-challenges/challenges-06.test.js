@@ -24,14 +24,7 @@ Returns: ['dyoll', 'eimaj'];
 
 const getNames = (arr) => {
   // Solution code here...
-  let newArr = [];
-
-  arr.map((arr, idx) =>{
-    newArr.push(arr.reverse());
-
-  });
-  return newArr.name;
-};
+ 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
