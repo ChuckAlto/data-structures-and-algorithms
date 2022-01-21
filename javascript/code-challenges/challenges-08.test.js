@@ -56,6 +56,14 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
+  return charArray.sort((a,b)=>{
+    if (a.children.length < b.children.length){
+      return -1;
+    }
+    if (a.children.length > b.children.length){
+      return 1;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,9 +123,9 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  // let regex = /[A-Z][a-z]*/g;
-  // let matched = str.match(regex);
-  // return matched;
+  let regex = /[A-Z][a-zA-Z]*/g;
+  return str.match(regex) || [];
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -128,9 +136,8 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  let regex = /[A-J][a-z]*/g;
-  let answer = arr.match(regex);
-  return answer;
+  let regex = /^[A-J]/;
+  return arr.filter(city => regex.test(city));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -206,7 +213,7 @@ Run your tests from the console: jest challenges-04.solution.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should sort the characters by number of children', () => {
     expect(sortByChildren(characters)[0].name).toStrictEqual('Euron');
     expect(sortByChildren(characters)[0].children.length).toStrictEqual(0);
