@@ -8,7 +8,7 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 
 const replaceZeros = (string) => {
   // Solution code here...
-  let regex = string.replace(/[0]/g, "zero");
+  let regex = string.replace(/[0]/g, 'zero');
   return regex;
 };
 
@@ -99,7 +99,7 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
-  let regex = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/g;
+  let regex = /^(\(\d{3}\)|\d{3})[ -]?\d{3}[ -]?\d{4}$/g;
   return regex.test(phoneNumber);
 };
 
