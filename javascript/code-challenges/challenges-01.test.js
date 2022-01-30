@@ -137,10 +137,10 @@ const createList = (availableItems) => {
   // Solution code here...
   let newArr = [];
 
-  availableItems.forEach( () => {
-    if (inventory[1] === true){
-      newArr.push(name);
-    }
+  availableItems.forEach( item => {
+    item.available === true;
+    newArr.push(item.name);
+
   });
   return newArr;
 };
