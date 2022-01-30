@@ -43,7 +43,11 @@ Write a function named checkValues that takes in an object and a value and retur
 
 const checkValues = (obj, value) => {
   // Solution code here...
-  return Object.values(value) === value ? true : false;
+  // let valuesArr = Object.values(obj);
+  let found = false;
+  // valuesArr.forEach(val => val === value ? found = true : '');
+  Object.values(obj).forEach(val => val === value ? found = true : '');
+  return found;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,6 +71,9 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
+  let newArr = [];
+  Object.keys(obj).forEach(key => newArr.push(`${key}: ${obj[key]}`));
+  return newArr;
 };
 
 
@@ -124,6 +131,7 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  Object.values(arr).forEach(person => houses.push(person.house));
   return houses;
 };
 
