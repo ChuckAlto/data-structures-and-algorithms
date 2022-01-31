@@ -9,6 +9,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 function returnTen(str){
   // Solution code here...
+  return str.split('').splice(-10, 10);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,6 +28,17 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
   // Solution code here...
+  // for (let i = 0; i <= matrix.length-1; i++){
+  //   for(let j = 0; j <= matrix.length-1; j++){
+  //     let highest = [];
+  //     let highVal = matrix[i][j];
+
+  //     highest.push(Math.max(highVal));
+  //     return highest;
+  //   }
+  // }
+  let highest = Math.max(...[].concat(...matrix));
+  return highest;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,6 +57,13 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+  let sum = 0;
+  for (let i = 0; i <= matrix.length-1; i++){
+    for(let j = 0; j <= matrix[i].length-1; j++){
+      sum += matrix[i][j];
+    }
+  }
+  return sum;
 };
 
 
@@ -72,16 +91,16 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
-  let hourly = [];
+  let hourlyTotals = [];
 
   for (let i in stores[0]){
     let hourlies = 0;
     for (let j in stores){
       hourlies += stores[j][i];
     }
-    hourly.push(hourlytotal)
+    hourlyTotals.push(hourlies);
   }
-
+  return hourlyTotals;
 };
 
 /* ------------------------------------------------------------------------------------------------
