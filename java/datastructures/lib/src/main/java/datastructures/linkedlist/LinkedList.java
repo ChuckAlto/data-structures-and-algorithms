@@ -46,4 +46,48 @@ public class LinkedList<T> {
     result += "NULL";
     return result;
   }
+
+  public void append(T value){
+    Node<T> newNode = new Node<>(value);
+    tail.next = newNode;
+    tail = newNode;
+    listLength++;
+  }
+
+  public void insertBefore(T value, T match){
+    Node<T> newNode = new Node<>(value);
+    if(head.value == match){
+      newNode.next = head;
+      head = newNode;
+    }
+    Node<T> current = head;
+    Node<T> prev = head;
+    while(current != null){
+      current = current.next;
+      if(current.value == match){
+        newNode.next = current;
+        prev.next = newNode;
+        break;
+      }
+      prev = current;
+    }
+    listLength++;
+  }
+
+  public void insertAfter(T value, T match){
+    Node<T> newNode = new Node<>(value);
+    Node<T> current = head;
+    while(current != null){
+      if(current.value == match){
+        newNode.next = current.next;
+        current.next = newNode;
+        if(newNode.next == null){
+          tail = newNode;
+        }
+      }
+      current = current.next;
+    }
+    listLength++;
+  }
+
 }
