@@ -103,4 +103,15 @@ public class LinkedListChallengesTest
     assertEquals("[4][8][15][16][23][42]NULL", sut.toString());
   }
 
+  @Test
+  void testkthfromendtoolarge() {
+    LinkedList<Integer> sut = new LinkedList<>();
+    sut.append(1);
+    sut.append(2);
+    sut.append(3);
+    assertThrows(IllegalArgumentException.class, () -> {
+      sut.kthFromEnd(4);
+    });
+  }
+
 }
