@@ -90,4 +90,19 @@ public class LinkedList<T> {
     listLength++;
   }
 
+  public T kthFromEnd(int k){
+    if(k >= listLength || k < 0){
+      return null;
+    }
+    int stopper = listLength - k;
+    Node<T> current = head;
+    for(int i = 0; i < stopper; i++){
+      if(i == stopper - 1){
+        return current.value;
+      }
+      current = current.next;
+    }
+    return null;
+  }
+
 }
